@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your HTML Page</title>
+</head>
+
+<body>
+    <!-- Your HTML content here -->
+
+    <div style="text-align: right; margin-top: 100px;">
+        <bible>Genesis 1:1</bible>
+
+    </div>
+    <div style="text-align: center; margin-top: 100px;">
+        <bible book="3 JOHN" chapter="1" verse="1-10" />
+    </div>
+
+    <div style="text-align: center; margin-top: 400px;">
+        <bible get="revelation 22" />
+    </div>
+
+
+
+    <!-- Include the Bible plugin JavaScript file -->
+    <script src="./bible-plugin.js"></script>
+    <script>
+
+        // Initialize the Bible plugin
+        const biblePlugin = new BiblePlugin('', {
+            version: 'kjv',
+            displayOn: 'click', // or 'hover'
+            showPreLoader: true,
+            showSpinner: true,
+            pagination: {
+                show: true,
+            },
+            content: {
+                showItalizedText: true,
+                showRedText: true,
+                justifyText: true,
+                className: ''
+            },
+            header: {
+                showVerse: true,
+                showVersion: true,
+                className: 'custom-header-class'
+            }
+
+        });
+
+        function ucwords(str) {
+            return (str + '').replace(/^([a-z])|\s+([a-z])/g, function ($1) {
+                return $1.toUpperCase();
+            });
+        }
+
+        console.log(ucwords('u SHBUY sss rd'));
+
+        // const biblePlugin = new BiblePlugin('', {
+        //     version: 'kjv',
+        //     displayOn: 'click', // or 'hover'
+        //     config: {
+        //         pagination: {
+        //             show: true,
+        //         },
+        //         content: {
+        //             showItalizedText: true,
+        //             showRedText: true,
+        //             justifyText: true,
+        //             className: ''
+        //         },
+        //         header: {
+        //             showVerse: true,
+        //             showVersion: true,
+        //             className: 'custom-header-class'
+        //         }
+        //     }
+
+        // });
+    </script>
+</body>
+
+</html>
